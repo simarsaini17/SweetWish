@@ -3842,23 +3842,10 @@ eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn th
 /*!*************************!*\
   !*** ./src/js/index.js ***!
   \*************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports) {
 
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _test__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./test */ \"./src/js/test.js\");\n\nvar x = 23;\nconsole.log(\"I have imported \".concat(_test__WEBPACK_IMPORTED_MODULE_0__[\"default\"], \" from test module! Variable x is \", 23));\n\n//# sourceURL=webpack:///./src/js/index.js?");
-
-/***/ }),
-
-/***/ "./src/js/test.js":
-/*!************************!*\
-  !*** ./src/js/test.js ***!
-  \************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\nconsole.log(\"Hi i am imported from another module\");\n/* harmony default export */ __webpack_exports__[\"default\"] = (11234);\n\n//# sourceURL=webpack:///./src/js/test.js?");
+eval("console.log(\"hello\");\n\n//# sourceURL=webpack:///./src/js/index.js?");
 
 /***/ }),
 

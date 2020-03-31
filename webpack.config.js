@@ -1,7 +1,8 @@
 const path=require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
+global._babelPolyfill = false;
 module.exports={
+    
     entry:['babel-polyfill','./src/js/index.js'],
     output:{
         path: path.resolve(__dirname,'dist'),
