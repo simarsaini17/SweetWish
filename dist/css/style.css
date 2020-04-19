@@ -153,6 +153,13 @@ div.carousel-inner > .carousel-item{
 .carousel-item img{
     height: 100%;
 }
+.carousel-control-prev , .carousel-control-next{
+    height: auto;
+}
+.carousel-control-prev-icon, .carousel-control-next-icon{
+    background-color: black;
+    border: none;
+}
 
 
 
