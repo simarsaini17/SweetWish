@@ -1,7 +1,7 @@
 * {
     margin: 0px;
     height: 0px;
-    /* border: 1px solid blue !important; */
+    border: 1px solid blue !important;  
 }
 
 :root{
@@ -50,7 +50,7 @@ body{
     height: 13%;
     left: 0px;
 }
-.nav__bar{
+div.nav__bar{
     background-color: black;   
     display: flex;
     flex-direction: row;
@@ -62,27 +62,41 @@ body{
     top: 0px;
     width: 100px;
     height: 100px;
-    margin-left: 80px;
+    margin-left: 60px;
+    margin-right: 0px;
     background-color: transparent;
 }
-.logo img{
-    width: 100%;
-    height: 100%;
-}
-form{
-    text-align: center;
-    margin: 10px;
-    padding: 10px;
-    width:100px;
-    height: 100px;
-}
-input{
-    width:150px;
-    font-size: 40px;
-}
-
-
-.head_nav .seaech__field{
-
+@media screen and (max-width: 375px){
+   .nav_bar .logo{
+        margin-left: 0px;
+    }
     
 }
+.logo img{
+    max-width: 100%;
+    height: auto;
+}
+form{
+    display:block;
+    text-align: center;
+    margin:0 150px;
+    width: 50%;
+    height: auto;
+}
+input{
+    text-align: center;
+    min-width: 220px;
+    min-height: 50px;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 20px;
+    font-size: 30px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    transform: translateZ(50px);
+}
+/* input.search_field{
+   
+} */
+
+
+
