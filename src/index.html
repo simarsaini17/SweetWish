@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
@@ -13,16 +14,42 @@
 <body>
     <div class="container">
         <header class="header">
-            <form class="head_nav">
+            <div class="nav__bar">
+                <div class="logo">
+                    <img src="img/logo2.png" alt="Sweet Wish">
+                </div>
+            <form class="head_nav" id="formid">
                 <input type="text" class="search__field" 
-                placeholder="Search recipe">
+                placeholder="Search recipe"/>
                 <button class="search_btn">
-                    <div class="seach_icon">
-                        <img src="https://img.icons8.com/ultraviolet/40/000000/search.png"/>
-                    </div>
-                    <span>Search</span>
+                    Search
                 </button>
              </form>
+            </div>
+             <div class="likes">
+                 <div class="likes__field">
+                    <img src="img/heart.png"/>
+                 </div>
+             </div>
+             <div class="likes__panel">
+                 <ul class="likes__list">
+                     <!--
+                        <li>
+                            <a class="likes__link" href="#23456">
+                                <figure class="likes__fig">
+                                    <img src="img/test-1.jpg" alt="Test">
+                                </figure>
+                                <div class="likes__data">
+                                    <h4 class="likes__name">Pasta with Tomato ...</h4>
+                                    <p class="likes__author">The Pioneer Woman</p>
+                                </div>
+                            </a>
+                        </li>
+                        -->
+                 </ul>
+             </div>
+             </header>
+             <div class="my__carousal">
              <div id="carousalSlides" class="carousel slide" data-ride="carousel">
                  <ol class="carousel-indicators">
                      <li data-target="#carousalSlides" data-slide-to="0" class="active"></li>
@@ -31,13 +58,13 @@
                  </ol>
                  <div class="carousel-inner">
                      <div class="carousel-item active">
-                         <img src="img/pizza1.jpeg" alt="First-Pizza" style="width:100%;">
+                         <img src="img/mutliple4.jpg" alt="First-Pizza" style="width:100%;">
                      </div>
                      <div class="carousel-item">
-                         <img src="img/carrots-food-fresh-freshness-616404.jpg"  alt="Second-Pizza" style="width:100%;">
+                         <img src="img/mutliple1.webp"  alt="Second-Pizza" style="width:100%;">
                      </div>
                      <div class="carousel-item">
-                        <img src="img/pizza3.png" alt="Third-Pizza" style="width:100%;">
+                        <img src="img/mutliple2.jpg" alt="Third-Pizza" style="width:100%;">
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#carousalSlides" role="button" data-slide="prev">
@@ -49,7 +76,40 @@
                     <span class="sr-only">Next</span>
                 </a>
             </div>
-         </header>
+        </div>
+        <div class="result__container">
+            <ul class="fetched__result">
+                <li>
+                    <a class="results__link results__link--active" href="#1234">
+                        <figure>
+                            <img src="img/test-1.jpg" alt="test"/>
+                        </figure>
+                        <div class="results__data">
+                            <h4 class="results__name">Pasta with Tomato ...</h4>
+                             <p class="results__author">The Pioneer Woman</p>
+                        </div>
+
+                    </a>
+                </li>
+            </ul>
+            <div class="results__page">
+                <button class="btn__prev">
+                    <img src="https://img.icons8.com/metro/52/000000/previous.png"/>
+                    <span>Prev</span>
+                </button>
+                <button class="btn__prev">
+                        <img src="https://img.icons8.com/metro/52/000000/next.png"/>
+                        <span>Next</span>
+                </button>
+            </div>
+        </div>
+        <div class="recipe">
+
+        </div>
+        <div class="shopping__list">
+                
+        </div>
+         
     </div>
 
 </body>
