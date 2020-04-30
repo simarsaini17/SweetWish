@@ -183,7 +183,7 @@ div.carousel-inner > .carousel-item{
     position: relative;
     display: grid;
     overflow:hidden;
-    height:150vh;
+    min-height:50rem;
     grid-gap: 2px;
     background-color: #FFFFE6;
     border:1px solid gray;
@@ -217,7 +217,7 @@ div.carousel-inner > .carousel-item{
       transition: all .5s .2s; }
 .results,
 .likes {
-  padding: 3rem 0; }
+  padding: 1rem 0; }
   .results__list,
   .likes__list {
     list-style: none; }
@@ -226,13 +226,13 @@ div.carousel-inner > .carousel-item{
   .likes__link:visited {
     display: flex;
     align-items: center;
-    padding: 1.5rem 3rem;
+    padding: 1.5rem 1rem;
     transition: all .3s;
     border-right: 1px solid #fff;
     text-decoration: none; }
   .results__link:hover,
   .likes__link:hover {
-    background-color: #F9F5F3;
+    background-color: #C0C0C0;
     transform: translateY(-2px); }
   .results__link--active,
   .likes__link--active {
@@ -243,7 +243,7 @@ div.carousel-inner > .carousel-item{
     border-radius: 50%;
     overflow: hidden;
     height: 5.5rem;
-    margin-right: 2rem;
+    /* margin-right: rem; */
     position: relative;
     backface-visibility: hidden; }
     .results__fig::before,
@@ -256,7 +256,8 @@ div.carousel-inner > .carousel-item{
       top: 0;
       left: 0;
       background-image: linear-gradient(to right bottom, #FBDB89, #F48982);
-      opacity: .4; }
+      opacity: 0;
+     }
     .results__fig img,
     .likes__fig img {
       display: block;
@@ -266,17 +267,17 @@ div.carousel-inner > .carousel-item{
       transition: all .3s; }
   .results__name,
   .likes__name {
-    font-size: 1.3rem;
-    color: #F59A83;
+    font-size: 1rem;
+    color:#E00E0E;
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: 800;
     margin-bottom: .3rem; }
   .results__author,
   .likes__author {
-    font-size: 1.1rem;
-    color: #968B87;
+    font-size: 0.7rem;
+    color: #000;
     text-transform: uppercase;
-    font-weight: 600; }
+    font-weight: 800; }
   .results__pages,
   .likes__pages {
     margin-top: 3rem;
