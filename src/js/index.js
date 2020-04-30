@@ -11,7 +11,7 @@ const stateObj={};
 const controlSearch= async ()=>{
     //1. Get query from view
     const query= searchView.getInput();
-    console.log(query);
+    // console.log(query);
 
     if(query){
         //2. Add new search object to the state object
@@ -23,6 +23,7 @@ const controlSearch= async ()=>{
 
         //5. Render UI on the page
         searchView.recipeResults(stateObj.search.result);
+        // console.log(stateObj.search.result);
 
         //6. clear input field
        searchView.clearInput();
