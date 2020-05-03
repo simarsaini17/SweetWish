@@ -5,6 +5,9 @@ export const getInput=()=> queryElements.searchField.value;
 export const clearInput=()=>{
     queryElements.searchField.value = "";
 }
+export const clearRenderList=()=>{
+    queryElements.searchResult.innerHTML="";
+}
 const displayRecipe = recipe =>{
     const htmlEle=`<li>
     <a class="likes__link" href="#${recipe.recipe_id}">

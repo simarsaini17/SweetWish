@@ -1,6 +1,6 @@
 import Search from "./models/Search";
 import * as searchView from "./View/searchView";
-import {queryElements} from "./View/selectorElements";
+import {queryElements,renderLoader} from "./View/selectorElements";
 
 // const search=new Search('pizza');
 // console.log(search);
@@ -20,6 +20,9 @@ const controlSearch= async ()=>{
 
         //4. search for recipe
         await stateObj.search.getResult();
+        searchView.clearRenderList();
+        renderLoader(queryElements.searchRe);
+        
 
         //5. Render UI on the page
         searchView.recipeResults(stateObj.search.result);
@@ -27,6 +30,8 @@ const controlSearch= async ()=>{
 
         //6. clear input field
        searchView.clearInput();
+       
+       
 
     }
 }
