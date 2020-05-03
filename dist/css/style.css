@@ -193,6 +193,23 @@ div.carousel-inner > .carousel-item{
     grid-template-areas: "head head head" "List Recipe Shopping";
     margin: 45vw auto auto auto;
 }
+.loader{
+  margin: 5rem auto;
+  text-align: center; 
+}
+.loader img{
+    height: 3.4rem;
+    width: 3.4rem;
+    color: rgb(243, 61, 16);
+    transform-origin: 44% 50%;
+    animation: rotate 1.5s infinite linear; 
+}
+@keyframes rotate{
+  0%{
+    transform: rotate(0);}
+  100%{
+    transform: rotate(360deg); 
+  }}
 .likes__field:hover {
         background-color: #F2EFEE; }
     .likes__panel:hover,
@@ -243,7 +260,7 @@ div.carousel-inner > .carousel-item{
     border-radius: 50%;
     overflow: hidden;
     height: 5.5rem;
-    /* margin-right: rem; */
+    margin-right: 0.5rem;
     position: relative;
     backface-visibility: hidden; }
     .results__fig::before,
