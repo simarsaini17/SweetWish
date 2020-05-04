@@ -3,7 +3,6 @@ export const queryElements={
     searchField : document.querySelector('.search__field'),
     searchRe:document.querySelector('.results'),
     searchResult: document.querySelector('.results__list')
-
 }
 const loaderEle={
     loader:'loader'

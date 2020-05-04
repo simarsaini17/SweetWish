@@ -22,7 +22,13 @@ const displayRecipe = recipe =>{
         </li>`;
     queryElements.searchResult.insertAdjacentHTML('beforeend', htmlEle);
 }
-
-export const recipeResults= recipes=>{
-    recipes.forEach(displayRecipe);
+// const pageNumbers={
+//     cureentPage: '1',
+//     numberPerPage: '10',
+//     numberOfPages:'0'
+// }
+export const recipeResults= (recipes, currentPage=1,numberPerPage=10)=>{
+    var begin=(currentPage-1)*numberPerPage;
+    var end= begin+numberPerPage;
+    recipes.slice(begin,end).forEach(displayRecipe);
 }
