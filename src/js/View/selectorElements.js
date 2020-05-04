@@ -2,7 +2,8 @@ export const queryElements={
     searchForm: document.querySelector('.head_nav'),
     searchField : document.querySelector('.search__field'),
     searchRe:document.querySelector('.results'),
-    searchResult: document.querySelector('.results__list')
+    searchResult: document.querySelector('.results__list'),
+    searchResButton:document.querySelector('.results__pages')
 }
 const loaderEle={
     loader:'loader'
