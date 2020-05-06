@@ -7,6 +7,7 @@ export const clearInput=()=>{
 }
 export const clearRenderList=()=>{
     queryElements.searchResult.innerHTML="";
+    queryElements.searchResButton.innerHTML="";
 }
 const displayRecipe = recipe =>{
     const htmlEle=`<li>
@@ -28,11 +29,11 @@ const displayRecipe = recipe =>{
 //     numberOfPages:'0'
 // }
 const createButton=(page, type)=>
-    `<button class="btn-inline results__btn--${type}>
+    `<button class="btn-inline results__btn--${type}" data-goto=${type === 'prev' ? page - 1 : page + 1}>
         <svg class="search__icon">
         <img src="https://img.icons8.com/flat_round/64/000000/arrow-${type==='prev'?'left':'right'}.png"/>
         </svg>
-        <span>${type==='prev'? page=page-1 : page=page+1}</span>
+        <span>${type==='prev'? page=page - 1 : page=page + 1}</span>
     </button>
 `;
 
@@ -41,10 +42,10 @@ const renderButtons=(page,numberOfResults, numberPerPage)=>{
     let button;
     if(page===1 && pages>1){
         button=createButton(page, 'next');
-
-    }else if(page < pages){
+    }
+    else if(page < pages){
         button=`${createButton(page,'prev')}
-        ${createButton(page,'next')}`
+        ${createButton(page,'next')}`;
 
     }else if(page===pages && pages >1){
         button=createButton(page,'prev');
@@ -54,7 +55,7 @@ const renderButtons=(page,numberOfResults, numberPerPage)=>{
 export const recipeResults= (recipes, currentPage=1,numberPerPage=10)=>{
     //Render result of page
     var begin=(currentPage-1)*numberPerPage;
-    var end= currentPage+numberPerPage
+    var end= currentPage*numberPerPage
     recipes.slice(begin,end).forEach(displayRecipe);
     // console.log(recipes.length);
     

@@ -41,3 +41,14 @@ queryElements.searchForm.addEventListener('submit',e=>{
     e.preventDefault();
     controlSearch();
 });
+
+queryElements.searchResButton.addEventListener('click', event=>{
+    const btn=event.target.closest('.btn-inline');
+    console.log(btn);
+    if(btn){
+        const goToPage= parseInt(btn.dataset.goto,10);
+        searchView.clearRenderList();
+        searchView.recipeResults(stateObj.search.result, goToPage);
+
+    }
+});
