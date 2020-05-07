@@ -1,4 +1,5 @@
 import Search from "./models/Search";
+import Recipe from "./models/Recipe";
 import * as searchView from "./View/searchView";
 import {queryElements,renderLoader,clearLoader} from "./View/selectorElements";
 
@@ -52,3 +53,19 @@ queryElements.searchResButton.addEventListener('click', event=>{
 
     }
 });
+
+//recipe controller
+const controlRecipe= ()=>{
+    const id= window.location.hash.replace('#','');
+    // console.log(id);
+    if(id){
+        //Prepare UI to changes
+        //create a new recipe object
+        //get recipe data
+        //recipe time and servings
+        //Render recipe
+    }
+}
+
+
+window.addEventListener('hashchange', controlRecipe);
