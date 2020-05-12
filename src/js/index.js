@@ -1,6 +1,7 @@
 import Search from "./models/Search";
 import Recipe from "./models/Recipe";
 import * as searchView from "./View/searchView";
+import * as recipeView from "./View/recipeView";
 import {queryElements,renderLoader,clearLoader} from "./View/selectorElements";
 
 // const search=new Search('pizza');
@@ -55,17 +56,24 @@ queryElements.searchResButton.addEventListener('click', event=>{
 });
 
 //recipe controller
-const controlRecipe= ()=>{
+const controlRecipe= async ()=>{
     const id= window.location.hash.replace('#','');
     // console.log(id);
     if(id){
         //Prepare UI to changes
         //create a new recipe object
+        stateObj.recipe=new Recipe(id);
         //get recipe data
+        await stateObj.recipe.getResult();
+        stateObj.recipe.parseIngredients();
         //recipe time and servings
+        stateObj.recipe.calculateTime();
+        stateObj.recipe.calculateServings();
+        
         //Render recipe
+        console.log(stateObj.recipe);
     }
 }
 
-
-window.addEventListener('hashchange', controlRecipe);
+['hashchange','load'].forEach(event=> window.addEventListener(event,controlRecipe));
+// window.addEventListener('hashchange', controlRecipe);
