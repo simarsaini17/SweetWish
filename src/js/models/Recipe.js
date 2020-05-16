@@ -5,15 +5,13 @@ export default class Recipe{
     }
     async getResult(){
         const result=await axios(`https://forkify-api.herokuapp.com/api/get?rId=${this.id}`);
-        console.log(result);
+        // console.log(result);
         this.recipeTitle=result.data.recipe.title;
         this.recipeImg=result.data.recipe.image_url;
         this.publisher=result.data.recipe.publisher_url;
         this.url=result.data.recipe.source_url;
         this.ingredients=result.data.recipe.ingredients;
-        //
     }
-
     calculateTime(){
         //Assuming that we need 15 min for each 3 ingredients
         const numImg=this.ingredients.length;
@@ -34,15 +32,15 @@ export default class Recipe{
             });
         
         ingredients=ingredients.replace(/ *\([^)]*\) */g, " "); 
-        
         const arrIng=ingredients.split(" ");
+        console.log(arrIng);
         const unitIndex=arrIng.findIndex(el2=> shortUnits.includes(el2));
         console.log(unitIndex);
         let ingredientObj;
         if(unitIndex > -1){
             let count;
             const arrCount=arrIng.slice(0,unitIndex);
-            if(arrCount===1){
+            if(arrCount.length===1){
                 count=eval(arrIng[0].replace('-','+'));
             }else{
                 count=eval(arrIng.slice(0,unitIndex).join('+'));
@@ -51,27 +49,27 @@ export default class Recipe{
                 count,
                 unit:arrIng[unitIndex],
                 ingredients:arrIng.slice(unitIndex+1).join(' ')
-            }
+            };
+            
 
-        }else if(parseInt(arrIng[0],10)){
+        } else if(parseInt(arrIng[0],10)){
             //There is no unit but first element is a number
             ingredientObj={
                 count:parseInt(arrIng[0],10),
-                unit:arrIng[unitIndex],
+                unit:'',
                 ingredients: arrIng.slice(1).join(' ')
-            }
-         }
-        else if(unitIndex === -1){
+             }
+             
+            } else if(unitIndex === -1){
             ingredientObj={
                 count:1,
                 unit:"",
                 ingredients
 
-            }
-
-        }
+            } }
+            
         return ingredientObj;
-        })
+        });
         this.ingredients=newIng;
 
     }

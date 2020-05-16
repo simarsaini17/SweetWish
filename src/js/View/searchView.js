@@ -33,7 +33,7 @@ const createButton=(page, type)=>
         <svg class="search__icon">
         <img src="https://img.icons8.com/flat_round/64/000000/arrow-${type==='prev'?'left':'right'}.png"/>
         </svg>
-        <span>${type==='prev'? page=page - 1 : page=page + 1}</span>
+        <span class="btn-text"> Page ${type==='prev'? page=page - 1 : page=page + 1}</span>
     </button>
 `;
 
