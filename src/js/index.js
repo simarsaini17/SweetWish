@@ -65,8 +65,13 @@ const controlRecipe= async ()=>{
         // renderLoader(queryElements.recipeSection);
         //Prepare UI to changes
         //create a new recipe object
+        searchview.clearRecipeResults();
         stateObj.recipe=new Recipe(id);
         //get recipe data
+        if(stateObj.search){
+            searchview.highlightActiveLink(id);
+        }
+        // searchview.clearRecipeResults();
         await stateObj.recipe.getResult();
         stateObj.recipe.parseIngredients();
         //recipe time and servings
