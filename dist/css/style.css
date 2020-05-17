@@ -185,7 +185,7 @@ div.carousel-inner > .carousel-item{
     min-height:50rem;
     grid-gap: 2px;
     background-color: #FFFFE6;
-    border:1px solid gray;
+    /* border:1px solid gray; */
     border-radius: 12px;
     box-shadow: 0 2rem 6rem 0.5rem rgba(101, 90, 86, 0.2);
     grid-template-columns:1.1fr 2fr 1.1fr;
@@ -345,14 +345,14 @@ width: 30rem; }
   .recipe__title {
     position: absolute;
     bottom: 0;
-    left: 30%;
+    left: 50%;
     transform: translate(-50%, 20%) skewY(-6deg);
     color: #fff;
     font-weight: 700;
     font-size: 1rem;
     text-transform: uppercase;
     width: 50%;
-    line-height: 0.7;
+    line-height: 2.75;
     text-align: center; }
     .recipe__title span {
       -webkit-box-decoration-break: clone;
@@ -364,7 +364,7 @@ width: 30rem; }
     align-items: center;
     padding: 4rem 0.5rem 1rem 0.5rem; }
   .recipe__info {
-    font-size: 0.7rem;
+    font-size: 0.9rem;
     text-transform: uppercase;
     display: flex;
     align-items: center; }
@@ -382,14 +382,29 @@ width: 30rem; }
     display: flex;
     height: 1rem;
     margin-left: 1.5rem;
-    visibility: hidden;
+    /*visibility: hidden; */
     opacity: 0;
+    text-align: center;
     transform: translateY(5px);
     transition: all .4s; }
   .recipe:hover .recipe__info-buttons {
     visibility: visible;
     opacity: 1;
     transform: translateY(0); }
+    .btn-tiny{
+      background-color: transparent;
+    }
+  .btn-tiny svg{
+    height: 1rem;
+    width: 1rem;
+    margin-bottom:5rem;
+    background-color: transparent;
+    }
+  .btn-tiny img{
+  height: 1rem;
+  width: 1rem;
+  margin-bottom:5rem;
+}
   .recipe__love {
     background-image: linear-gradient(to right bottom, #FBDB89, #F48982);
     border-radius: 50%;
