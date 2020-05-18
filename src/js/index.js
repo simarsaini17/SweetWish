@@ -88,3 +88,17 @@ const controlRecipe= async ()=>{
 
 ['hashchange','load'].forEach(event=> window.addEventListener(event,controlRecipe));
 // window.addEventListener('hashchange', controlRecipe);
+queryElements.recipeSection.addEventListener('click', e=>{
+    if(e.target.matches('.btn-dec, .btn-dec *')){
+        if(stateObj.recipe.servings>1){
+            stateObj.recipe.updateServings('dec');
+            recipeview.updateServingsDom(stateObj.recipe);
+        }
+    }else if(e.target.matches('.btn-inc, .btn-inc *')){
+        stateObj.recipe.updateServings('inc');
+        recipeview.updateServingsDom(stateObj.recipe);
+    }
+    
+    console.log(stateObj.recipe);
+
+});
