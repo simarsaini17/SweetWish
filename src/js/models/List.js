@@ -3,9 +3,9 @@ export default class List{
     constructor(){
         this.items=[];
     }
-    addLikedItem(count,unit,ingredients){
+    addItem(count,unit,ingredients){
         const item={
-            id=uniquid(),
+            id:uniquid(),
             count,
             unit,
             ingredients
@@ -20,6 +20,5 @@ export default class List{
     }
     updateCount(id,newcount){
         this.items.findIndex(el=> el.id===id).count=newcount;
-
     }
 }
