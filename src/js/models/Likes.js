@@ -13,8 +13,8 @@ export default class Likes{
         return like;
     }
     deleteItem(id){
-        const index=this.items.findIndex(el=>el.id===id);
-        this.items.splice(index,1);
+        const index=this.likes.findIndex(el=>el.id===id);
+        this.likes.splice(index,1);
     }
     isLiked(id){
         return this.likes.findIndex(el=>el.id===id)!==-1;
