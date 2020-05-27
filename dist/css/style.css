@@ -90,28 +90,11 @@ div.nav__bar{
         width:100%;
     }
 }
-.likes{
-    position: relative;
-    align-self:stretch;
-    width: 100px;
-}
-.likes__field{
-    width: 100px;
-    height: auto;
-    margin-top: 20px;
-    text-align: center;
-
-}
-.likes__field img{
-    width:50%;
-    height: 50%;
-    opacity: 0;
-}
 
 form{
     display:block;
     text-align: center;
-    margin:0 200px;
+    margin:0px 200px;
     width: 50%;
     height: auto;
 }
@@ -143,6 +126,25 @@ input, button{
     border: none;
     text-transform: uppercase;  
     font-size: 20px;
+}
+.likes{
+  position: relative;
+  align-self: stretch;
+  padding: 0 !important;
+}
+.likes__field{
+  cursor: pointer;
+    width: 100px;
+    height: auto;
+    margin-top: 30px;
+    text-align: center;
+    transition: all .3s; 
+
+}
+.likes__field img{
+    width:50%;
+    height: 50%;
+    opacity: 1;
 }
 .my__carousal{
     position: absolute;
@@ -210,7 +212,7 @@ div.carousel-inner > .carousel-item{
     transform: rotate(360deg); 
   }}
 .likes__field:hover {
-        background-color: #F2EFEE; }
+        background-color:#F2EFEE; }
     .likes__panel:hover,
     .likes__field:hover + .likes__panel {
       visibility: visible;
@@ -231,8 +233,7 @@ div.carousel-inner > .carousel-item{
       visibility: hidden;
       opacity: 0;
       transition: all .5s .2s; }
-.results,
-.likes {
+.result, .likes{
   padding: 1rem 0; }
   .results__list,
   .likes__list {
@@ -394,13 +395,13 @@ width: 30rem; }
     .btn-tiny{
       background-color: transparent;
     }
-  .btn-tiny svg{
+ .btn-tiny svg{
     height: 1rem;
     width: 1rem;
     margin-bottom:5rem;
     background-color: transparent;
     }
-  .btn-tiny img{
+  .recipe__info-buttons .btn-tiny img{
   height: 1rem;
   width: 1rem;
   margin-bottom:5rem;
@@ -412,7 +413,7 @@ width: 30rem; }
     cursor: pointer;
     height: 2rem;
     width: 2rem;
-    margin-left: auto;
+    margin-left: 1rem;
     transition: all .2s;
     display: flex;
     align-items: center;
@@ -425,6 +426,10 @@ width: 30rem; }
       height: 2rem;
       width: 2rem;
       fill: #fff; }
+      .recipe__love img{
+        margin-right: 0.3rem;
+        fill: red;
+      }
   .recipe__ingredients {
     padding: 2rem 1rem;
     font-size: 1rem;
@@ -478,6 +483,10 @@ width: 30rem; }
   padding: 1rem 1rem;
   display: flex;
   flex-direction: column; }
+ h2{
+    font-weight: 300;
+    font-size: 1.6rem;
+  }
   .shopping__list {
     list-style: none;
     max-height: 77rem;
@@ -528,11 +537,16 @@ width: 30rem; }
     position: absolute;
     right: 0;
     background-image: linear-gradient(to right, transparent 0%, #fff 40%, #fff 100%);
-    width: 1rem;
-    padding-left: 2rem;
+    width: 0.7rem;
+    height: 2rem;
+    padding-left: 0.7rem;
     visibility: hidden;
     opacity: 0;
     transition: all .5s; }
+    .shopping__delete .btn-tiny img{
+    height: 0.5rem;
+    width: 1rem;
+    }
   .shopping__item:hover .shopping__delete {
     opacity: 1;
     visibility: visible; }

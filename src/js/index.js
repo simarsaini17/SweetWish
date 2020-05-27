@@ -1,13 +1,13 @@
 import Search from "./models/Search";
 import Recipe from "./models/Recipe";
+import List from "./models/List";
+import Likes from "./models/Likes";
 import * as searchview from "./view/searchView";
 import * as recipeview from "./view/recipeView";
-// import * as recipeView from "./View/recipeView";
+import * as listview from "./view/listView";
 import {queryElements, renderLoader, clearLoader} from "./View/selectorElements";
 
-// const search=new Search('pizza');
-// console.log(search);
-// search.getResult();
+
 
 const stateObj={};
 
@@ -87,6 +87,51 @@ const controlRecipe= async ()=>{
 }
 
 ['hashchange','load'].forEach(event=> window.addEventListener(event,controlRecipe));
+
+//List Controller
+const controlList=()=>{
+    if(!stateObj.list){
+        stateObj.list=new List();
+        //add Ingredient to the list
+        stateObj.recipe.ingredients.forEach(el=> {
+           const item= stateObj.list.addItem(el.count,el.unit,el.ingredients);
+           listview.shoppingList(item);
+        });
+    }
+}
+queryElements.shoppingList.addEventListener('click', e=>{
+    const id=e.target.closest('.shopping__item').dataset.itemid;
+    if(e.target.matches('.shopping__delete, .shopping__delete *')){
+        stateObj.list.deleteItem(id);
+        listview.deleteItem(id);
+    }else if(e.target.matches('.shopping__count--value')){
+        const val=parseFloat(e.target.value,10);
+        stateObj.list.updateCount(id,val);
+    }
+
+});
+//Likes Controller
+const controlLike=()=>{
+    if(!stateObj.likes){
+        stateObj.likes=new Likes();
+    }
+        const currentRecipeId=stateObj.recipe.id;
+        if(!stateObj.likes.isLiked(currentRecipeId)){
+            const newLike=stateObj.likes.addLikeItem(
+                currentRecipeId,
+                stateObj.recipe.recipeTitle,
+                stateObj.recipe.publisher,
+                stateObj.recipe.recipeImg
+            )
+            console.log(stateObj.likes);
+
+        }else{
+            stateObj.likes.deleteItem(currentRecipeId);
+            console.log(stateObj.likes);
+        }
+        
+    }
+
 // window.addEventListener('hashchange', controlRecipe);
 queryElements.recipeSection.addEventListener('click', e=>{
     if(e.target.matches('.btn-dec, .btn-dec *')){
@@ -97,8 +142,11 @@ queryElements.recipeSection.addEventListener('click', e=>{
     }else if(e.target.matches('.btn-inc, .btn-inc *')){
         stateObj.recipe.updateServings('inc');
         recipeview.updateServingsDom(stateObj.recipe);
+    }else if(e.target.matches('.recipe__btn--add, .recipe__btn--add *')){
+        controlList();
+    }else if(e.target.matches('.recipe__love, .recipe__love *')){
+        controlLike();
     }
-    
-    console.log(stateObj.recipe);
-
 });
+
+
