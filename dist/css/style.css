@@ -127,25 +127,6 @@ input, button{
     text-transform: uppercase;  
     font-size: 20px;
 }
-.likes{
-  position: relative;
-  align-self: stretch;
-  padding: 0 !important;
-}
-.likes__field{
-  cursor: pointer;
-    width: 100px;
-    height: auto;
-    margin-top: 30px;
-    text-align: center;
-    transition: all .3s; 
-
-}
-.likes__field img{
-    width:50%;
-    height: 50%;
-    opacity: 1;
-}
 .my__carousal{
     position: absolute;
     width: 100%;
@@ -211,10 +192,30 @@ div.carousel-inner > .carousel-item{
   100%{
     transform: rotate(360deg); 
   }}
+  .likes{
+    position: relative;
+    align-self: stretch;
+    padding: 0 !important;
+  }
+  .likes__field{
+    cursor: pointer;
+    width: 100px;
+    height: auto;
+    margin-top: 30px;
+    text-align: center;
+    transition: all .3s; 
+    border-radius: 50%
+    }
+  .likes__field img{
+    width: 50%;
+      height: 50%;
+      opacity: 1;
+  }
 .likes__field:hover {
-        background-color:#F2EFEE; }
+      transform: scaleY(1.2) scaleX(1.2);
+    }
     .likes__panel:hover,
-    .likes__field:hover + .likes__panel {
+    .likes__field:hover + .likes__panel{
       visibility: visible;
       opacity: 1; }
     .likes__icon {
@@ -224,29 +225,36 @@ div.carousel-inner > .carousel-item{
     .likes__panel {
       position: absolute;
       right: 0;
-      top: 10rem;
+      top: 4rem;
       z-index: 10;
-      padding: 2rem 0;
-      width: 34rem;
+      width: 10rem;
       background-color: #fff;
       box-shadow: 0 0.8rem 5rem 2rem rgba(101, 90, 86, 0.1);
-      visibility: hidden;
-      opacity: 0;
+      /* visibility: hidden; */
+      opacity: 1;
       transition: all .5s .2s; }
 .result, .likes{
   padding: 1rem 0; }
   .results__list,
   .likes__list {
     list-style: none; }
-  .results__link:link, .results__link:visited,
-  .likes__link:link,
-  .likes__link:visited {
+  .results__link:link, .results__link:visited{
     display: flex;
     align-items: center;
     padding: 1.5rem 1rem;
     transition: all .3s;
     border-right: 1px solid #fff;
     text-decoration: none; }
+    .likes__link:link,
+  .likes__link:visited {
+    display: flex;
+    align-items: center;
+    top:0px;
+    padding:0.5rem 0.5rem;
+    transition: all .3s;
+    border-right: 1px solid #fff;
+    text-decoration: none; 
+  }
   .results__link:hover,
   .likes__link:hover {
     background-color: #C0C0C0;
@@ -254,8 +262,7 @@ div.carousel-inner > .carousel-item{
   .results__link--active,
   .likes__link--active {
     background-color: #F9F5F3; }
-  .results__fig,
-  .likes__fig {
+  .results__fig{
     flex: 0 0 5.5rem;
     border-radius: 50%;
     overflow: hidden;
@@ -263,6 +270,15 @@ div.carousel-inner > .carousel-item{
     margin-right: 0.5rem;
     position: relative;
     backface-visibility: hidden; }
+    .likes__fig{
+      flex: 0 0 3rem;
+      border-radius: 50%;
+      height: 2rem;
+      margin-right: 0.3rem;
+      overflow: hidden;
+      position: relative;
+      backface-visibility: hidden; 
+  }
     .results__fig::before,
     .likes__fig::before {
       content: '';
@@ -282,13 +298,20 @@ div.carousel-inner > .carousel-item{
       height: 100%;
       object-fit: cover;
       transition: all .3s; }
-  .results__name,
-  .likes__name {
+  .results__name {
     font-size: 1rem;
     color:#E00E0E;
     text-transform: uppercase;
     font-weight: 800;
-    margin-bottom: .3rem; }
+    text-align: center;
+    margin-bottom: .4rem; }
+    .likes__name{
+      font-size: 0.7rem;
+      color:#E00E0E;
+      text-transform: uppercase;
+      font-weight: 800;
+      margin-bottom: .3rem;
+     }
   .results__author,
   .likes__author {
     font-size: 0.7rem;
@@ -308,12 +331,19 @@ div.carousel-inner > .carousel-item{
   .likes__btn--prev {
     background-color: transparent;
     float: left;
+
     flex-direction: row-reverse; }
   .results__btn--next,
   .likes__btn--next {
+    /* margin-left: 3rem; */
     background-color: transparent;
     float: right;
   }
+.search__icon img{
+    height: 2px;
+    width: 6px;
+  }
+
   svg.search__icon{
     height: 0px;
     width: 0px;
@@ -407,8 +437,9 @@ width: 30rem; }
   margin-bottom:5rem;
 }
   .recipe__love {
-    background-image: linear-gradient(to right bottom, #FBDB89, #F48982);
+    /* background-image: linear-gradient(to right bottom, #FBDB89, #F48982); */
     border-radius: 50%;
+    color: white;
     border: none;
     cursor: pointer;
     height: 2rem;
@@ -451,6 +482,7 @@ width: 30rem; }
     height: 1rem;
     width: 1rem;
     fill: #F59A83;
+    background-color: #F59A83;
     border: 1px solid #F59A83;
     border-radius: 50%;
     padding: 1.6px;
@@ -477,15 +509,40 @@ width: 30rem; }
     margin-bottom: 3rem;
     color: #968B87; }
   .recipe__by {
-    font-weight: 30; }
-
+    font-weight: 30; 
+  }
+.recipe__btn{
+    width: 14rem;
+    height: 3rem;
+    background-image: linear-gradient(to right bottom, #FBDB89, #F48982);
+    text-align: center;
+  }
+  .recipe__btn img{
+    height: 3rem;
+  }
+  .recipe__btn span{
+    height: 1rem;
+    width: 2rem;
+  }
+  .recipe__btn:hover{
+    transform: scale(1.1);
+    transition: all .2s ease;
+}
 .shopping {
   padding: 1rem 1rem;
   display: flex;
   flex-direction: column; }
- h2{
-    font-weight: 300;
-    font-size: 1.6rem;
+ .shopping  .heading-2{
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  background-image: linear-gradient(to right bottom, #FBDB89, #F48982);
+  transform: translate(-50%, 20%) skewY(-6deg);
+  text-transform: uppercase;
+  color: white;
+  width: 60%;
+  margin-left:7rem; 
+    font-weight: 500;
+    font-size: 1rem;
   }
   .shopping__list {
     list-style: none;
