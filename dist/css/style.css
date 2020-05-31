@@ -204,14 +204,16 @@ div.carousel-inner > .carousel-item{
     margin-top: 30px;
     text-align: center;
     transition: all .3s; 
+    border-radius: 50%
     }
   .likes__field img{
-      width:50%;
+    width: 50%;
       height: 50%;
       opacity: 1;
   }
 .likes__field:hover {
-        background-color:#F2EFEE; }
+      transform: scaleY(1.2) scaleX(1.2);
+    }
     .likes__panel:hover,
     .likes__field:hover + .likes__panel {
       visibility: visible;
@@ -499,16 +501,11 @@ width: 30rem; }
   .recipe__btn span{
     height: 1rem;
     width: 2rem;
-   
   }
   .recipe__btn:hover{
     transform: scale(1.1);
     transition: all .2s ease;
 }
-  
-
-
-
 .shopping {
   padding: 1rem 1rem;
   display: flex;
