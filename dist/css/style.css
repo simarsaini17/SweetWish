@@ -215,7 +215,7 @@ div.carousel-inner > .carousel-item{
       transform: scaleY(1.2) scaleX(1.2);
     }
     .likes__panel:hover,
-    .likes__field:hover + .likes__panel {
+    .likes__field:hover + .likes__panel{
       visibility: visible;
       opacity: 1; }
     .likes__icon {
@@ -227,27 +227,34 @@ div.carousel-inner > .carousel-item{
       right: 0;
       top: 4rem;
       z-index: 10;
-      padding: 2rem 0;
-      width: 24rem;
+      width: 10rem;
       background-color: #fff;
       box-shadow: 0 0.8rem 5rem 2rem rgba(101, 90, 86, 0.1);
-      visibility: hidden;
-      opacity: 0;
+      /* visibility: hidden; */
+      opacity: 1;
       transition: all .5s .2s; }
 .result, .likes{
   padding: 1rem 0; }
   .results__list,
   .likes__list {
     list-style: none; }
-  .results__link:link, .results__link:visited,
-  .likes__link:link,
-  .likes__link:visited {
+  .results__link:link, .results__link:visited{
     display: flex;
     align-items: center;
     padding: 1.5rem 1rem;
     transition: all .3s;
     border-right: 1px solid #fff;
     text-decoration: none; }
+    .likes__link:link,
+  .likes__link:visited {
+    display: flex;
+    align-items: center;
+    top:0px;
+    padding:0.5rem 0.5rem;
+    transition: all .3s;
+    border-right: 1px solid #fff;
+    text-decoration: none; 
+  }
   .results__link:hover,
   .likes__link:hover {
     background-color: #C0C0C0;
@@ -255,8 +262,7 @@ div.carousel-inner > .carousel-item{
   .results__link--active,
   .likes__link--active {
     background-color: #F9F5F3; }
-  .results__fig,
-  .likes__fig {
+  .results__fig{
     flex: 0 0 5.5rem;
     border-radius: 50%;
     overflow: hidden;
@@ -264,6 +270,15 @@ div.carousel-inner > .carousel-item{
     margin-right: 0.5rem;
     position: relative;
     backface-visibility: hidden; }
+    .likes__fig{
+      flex: 0 0 3rem;
+      border-radius: 50%;
+      height: 2rem;
+      margin-right: 0.3rem;
+      overflow: hidden;
+      position: relative;
+      backface-visibility: hidden; 
+  }
     .results__fig::before,
     .likes__fig::before {
       content: '';
@@ -283,13 +298,20 @@ div.carousel-inner > .carousel-item{
       height: 100%;
       object-fit: cover;
       transition: all .3s; }
-  .results__name,
-  .likes__name {
+  .results__name {
     font-size: 1rem;
     color:#E00E0E;
     text-transform: uppercase;
     font-weight: 800;
-    margin-bottom: .3rem; }
+    text-align: center;
+    margin-bottom: .4rem; }
+    .likes__name{
+      font-size: 0.7rem;
+      color:#E00E0E;
+      text-transform: uppercase;
+      font-weight: 800;
+      margin-bottom: .3rem;
+     }
   .results__author,
   .likes__author {
     font-size: 0.7rem;
